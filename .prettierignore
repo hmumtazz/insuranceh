@@ -1,0 +1,11 @@
+.next
+.vercel
+node_modules
+dist
+build
+*.log
+.env*
+.DS_Store
+package-lock.json
+public/sw.js
+public/workbox-*.js
