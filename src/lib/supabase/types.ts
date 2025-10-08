@@ -208,28 +208,52 @@ export type Database = {
       }
       profiles: {
         Row: {
+          avatar_url: string | null
           created_at: string | null
+          date_of_birth: string | null
+          display_name: string | null
           email: string
           email_verified: boolean | null
           full_name: string | null
           id: string
+          is_anonymous: boolean | null
+          onboarding_completed: boolean | null
+          phone: string
+          provider: string | null
           updated_at: string | null
+          username: string | null
         }
         Insert: {
+          avatar_url?: string | null
           created_at?: string | null
+          date_of_birth?: string | null
+          display_name?: string | null
           email: string
           email_verified?: boolean | null
           full_name?: string | null
           id: string
+          is_anonymous?: boolean | null
+          onboarding_completed?: boolean | null
+          phone?: string
+          provider?: string | null
           updated_at?: string | null
+          username?: string | null
         }
         Update: {
+          avatar_url?: string | null
           created_at?: string | null
+          date_of_birth?: string | null
+          display_name?: string | null
           email?: string
           email_verified?: boolean | null
           full_name?: string | null
           id?: string
+          is_anonymous?: boolean | null
+          onboarding_completed?: boolean | null
+          phone?: string
+          provider?: string | null
           updated_at?: string | null
+          username?: string | null
         }
         Relationships: []
       }
@@ -315,7 +339,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      generate_anonymous_username: {
+        Args: Record<PropertyKey, never>
+        Returns: string
+      }
     }
     Enums: {
       subscription_tier: "basic" | "premium" | "enterprise"
