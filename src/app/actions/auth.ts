@@ -33,7 +33,7 @@ export async function signUpWithEmail(formData: FormData) {
 export async function verifyOtp(email: string, token: string) {
   const supabase = await createClient();
 
-  const { error } = await supabase.auth.verifyOtp({
+  const { error, data } = await supabase.auth.verifyOtp({
     email,
     token,
     type: 'email',
@@ -43,8 +43,16 @@ export async function verifyOtp(email: string, token: string) {
     return { error: error.message };
   }
 
+  // Update email_verified status in profiles table
+  if (data.user) {
+    await supabase
+      .from('profiles')
+      .update({ email_verified: true })
+      .eq('id', data.user.id);
+  }
+
   revalidatePath('/', 'layout');
-  redirect('/onboarding');
+  return { success: true };
 }
 
 export async function signInWithEmail(formData: FormData) {

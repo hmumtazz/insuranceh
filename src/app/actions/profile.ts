@@ -5,8 +5,11 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
 interface ProfileCompletionData {
-  displayName: string;
-  dateOfBirth: string;
+  firstName: string;
+  lastName: string;
+  birthMonth: string;
+  birthDay: string;
+  birthYear: string;
   phone: string;
   username: string;
   isAnonymous: boolean;
@@ -23,7 +26,7 @@ export async function completeProfile(data: ProfileCompletionData) {
     return { error: 'Not authenticated' };
   }
 
-  if (!data.displayName || !data.dateOfBirth || !data.phone || !data.username) {
+  if (!data.firstName || !data.lastName || !data.birthMonth || !data.birthDay || !data.birthYear || !data.phone || !data.username) {
     return { error: 'All fields are required' };
   }
 
@@ -37,12 +40,20 @@ export async function completeProfile(data: ProfileCompletionData) {
     };
   }
 
-  const phoneRegex = /^\+?1?\s*\(?([0-9]{3})\)?[-.\s]?([0-9]{3})[-.\s]?([0-9]{4})$/;
-  if (!phoneRegex.test(data.phone)) {
-    return { error: 'Please enter a valid US phone number' };
+  // Validate phone number (should be 10 digits after removing formatting)
+  const cleanedPhone = data.phone.replace(/\D/g, '');
+  if (cleanedPhone.length !== 10) {
+    return { error: 'Please enter a valid 10-digit US phone number' };
   }
 
-  const age = calculateAge(new Date(data.dateOfBirth));
+  // Validate date of birth
+  const birthDate = new Date(
+    parseInt(data.birthYear),
+    parseInt(data.birthMonth) - 1,
+    parseInt(data.birthDay)
+  );
+
+  const age = calculateAge(birthDate);
   if (age < 18) {
     return { error: 'You must be at least 18 years old to use this service' };
   }
@@ -61,9 +72,12 @@ export async function completeProfile(data: ProfileCompletionData) {
   const { error: updateError } = await supabase
     .from('profiles')
     .update({
-      full_name: data.displayName,
-      display_name: data.displayName,
-      date_of_birth: data.dateOfBirth,
+      first_name: data.firstName,
+      last_name: data.lastName,
+      full_name: `${data.firstName} ${data.lastName}`,
+      birth_month: parseInt(data.birthMonth),
+      birth_day: parseInt(data.birthDay),
+      birth_year: parseInt(data.birthYear),
       phone: data.phone,
       username: data.username,
       is_anonymous: data.isAnonymous,
