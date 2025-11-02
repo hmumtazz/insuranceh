@@ -186,7 +186,7 @@ export default function VerifyPage() {
 
         <div className="space-y-3 border-t border-gray-200 pt-6">
           <p className="text-center text-sm text-gray-600">
-            Didn't receive the code?
+            Didn&apos;t receive the code?
           </p>
           <Button variant="outline" fullWidth>
             Resend Code
