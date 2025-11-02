@@ -63,8 +63,8 @@ export function Hero({ prefersReducedMotion, onSignupClick }: HeroProps) {
           className="font-serif text-5xl tracking-tight text-neutral-900 sm:text-6xl md:text-7xl lg:text-8xl"
           style={{ textShadow: '0 2px 8px rgba(0,0,0,0.15)' }}
         >
-          See what your neighbors pay for home insurance,<br />
-          then pay less.
+          See what your Neighbors Pay for Home Insurance,<br />
+          then Pay Less.
         </motion.h1>
 
 
