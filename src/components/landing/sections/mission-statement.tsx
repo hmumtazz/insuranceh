@@ -100,7 +100,7 @@ export function MissionStatement({ prefersReducedMotion }: MissionStatementProps
       <div className="absolute bottom-0 left-20 -z-10 h-80 w-80 rounded-full bg-slate-200/45 blur-3xl" />
 
       <div className="mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-4 py-24 sm:px-6 lg:px-8">
-        <div className="grid gap-20 lg:grid-cols-[6fr_6fr] lg:items-center">
+        <div className="grid gap-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <motion.div
             initial={prefersReducedMotion ? undefined : { opacity: 0, y: 32 }}
             whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
@@ -210,7 +210,7 @@ export function MissionStatement({ prefersReducedMotion }: MissionStatementProps
             whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
-            className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-12 shadow-2xl shadow-sky-200/40 backdrop-blur"
+            className="relative w-[200%] overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-12 shadow-2xl shadow-sky-200/40 backdrop-blur"
           >
             <div className="absolute -top-20 right-16 h-64 w-64 rounded-full bg-sky-200/35 blur-3xl" />
             <div className="absolute top-24 right-[-3rem] h-80 w-80 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(255,138,76,0.45),_transparent_70%)] blur-3xl" />
@@ -222,7 +222,7 @@ export function MissionStatement({ prefersReducedMotion }: MissionStatementProps
                   Live benchmarks
                 </span>
                 <h3 className="font-serif text-3xl leading-snug text-neutral-900">
-                  Insurance Data, finally on your side.
+                  Insurance data, finally on your side.
                 </h3>
               </div>
 
