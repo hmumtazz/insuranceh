@@ -35,8 +35,8 @@ const featureItems = [
     ),
   },
   {
-    title: 'Privacy-first design',
-    description: 'Your personal information is never shared. We only show aggregated, anonymized data, no contact details, ever.',
+    title: 'Privacy-First Design',
+    description: 'Your personal information is never shared. We only show aggregated, anonymized data. No contact details, ever.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-6 w-6">
         <path
@@ -55,7 +55,7 @@ const featureItems = [
     ),
   },
   {
-    title: 'Negotiation ready',
+    title: 'Negotiation Ready',
     description: 'Get a detailed market report showing local rates and carrier trends. Armed with real data, you can negotiate confidently.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-6 w-6">
@@ -75,8 +75,8 @@ const featureItems = [
     ),
   },
   {
-    title: 'Broker',
-    description: 'Connect with verified local brokers who compete for your business. You reach out to them if you want.',
+    title: 'Verified Broker Network (Coming Soon)',
+    description: 'Connect with verified local brokers who compete for your business. Engagement is always on your terms.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-6 w-6">
         <path
@@ -115,7 +115,7 @@ export function MissionStatement({ prefersReducedMotion }: MissionStatementProps
 
             <div className="space-y-6">
               <h2 className="font-serif text-4xl leading-tight text-neutral-900 sm:text-5xl">
-                Privacy-first. Always community-driven. Your data is never shared, never sold.
+                Privacy-first. Always community-driven. Helping homeowners take control of their insurance costs with confidence.
               </h2>
 
               <p className="max-w-2xl text-lg leading-relaxed text-neutral-700 sm:text-xl">
@@ -132,7 +132,7 @@ export function MissionStatement({ prefersReducedMotion }: MissionStatementProps
               className="relative"
             >
               <div className="text-center mb-6">
-                <p className="text-sm font-medium text-neutral-600">Compare quotes from leading carriers</p>
+                <p className="text-sm font-medium text-neutral-600">Compare Quotes from Leading Carriers</p>
               </div>
               <div className="relative w-full overflow-hidden rounded-xl border border-white/60 bg-white/50 py-6 backdrop-blur-sm">
                 <style jsx>{`

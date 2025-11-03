@@ -7,7 +7,8 @@ import { Hero } from './sections/hero';
 import { MissionStatement } from './sections/mission-statement';
 import { LandingPageCard1 } from './sections/landing-page-card-1';
 import { LandingPageCard2 } from './sections/landing-page-card-2';
-import { LandingPageCard3 } from './sections/landing-page-card-3';
+import { HowItWorks } from './sections/how-it-works';
+import { RateMapVideo } from './sections/rate-map-video';
 import { LandingPageCard4 } from './sections/landing-page-card-4';
 import { LandingPageCard5 } from './sections/landing-page-card-5';
 import { LandingPageCard6 } from './sections/landing-page-card-6';
@@ -53,7 +54,8 @@ export default function LandingContent() {
         />
         <MissionStatement prefersReducedMotion={prefersReducedMotion} />
         <LandingPageCard2 prefersReducedMotion={prefersReducedMotion} />
-        <LandingPageCard3 prefersReducedMotion={prefersReducedMotion} />
+        <HowItWorks prefersReducedMotion={prefersReducedMotion} />
+        <RateMapVideo prefersReducedMotion={prefersReducedMotion} />
         <LandingPageCard1 prefersReducedMotion={prefersReducedMotion} />
         <LandingPageCard5 prefersReducedMotion={prefersReducedMotion} />
         <LandingPageCard4 prefersReducedMotion={prefersReducedMotion} />

@@ -7,13 +7,14 @@ export function Footer() {
       >
         <div>
           <div className="mb-3 flex items-center gap-2">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-neutral-900 font-bold text-white">
-              R
-            </span>
-            <span className="font-semibold text-neutral-900">RateNextDoor</span>
+            <img 
+              src="/logo.png" 
+              alt="RateNextDoor Logo" 
+              className="h-8 w-30 md:h-9 lg:h-10 object-contain"
+            />
           </div>
           <p className="max-w-xs text-neutral-600">
-            Transparent home insurance pricing for every neighborhood.
+            Transparent Home Insurance Pricing for Every Neighborhood.
           </p>
         </div>
         <FooterColumn
@@ -27,7 +28,7 @@ export function Footer() {
         />
       </div>
       <div className="border-t py-6 text-center text-xs text-neutral-500">
-        © {new Date().getFullYear()} RateNextDoor, Inc. All rights reserved.
+        © {new Date().getFullYear()} RateNextDoor, Inc. All Rights Reserved.
       </div>
     </footer>
   );

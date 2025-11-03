@@ -20,10 +20,10 @@ export function LandingPageCard7({ onSignupClick }: LandingPageCard7Props) {
         <div className="rounded-3xl bg-neutral-900 p-10 text-white shadow-xl md:flex md:items-center md:justify-between md:gap-10 md:p-14">
           <div>
             <h3 className="font-serif text-2xl md:text-3xl">
-              Landing Page Card 7
+              Join the Movement for Fair Insurance
             </h3>
             <p className="mt-3 max-w-xl text-neutral-300">
-              Landing Page Card 7
+            Every rate shared helps homeowners like you get the transparency they deserve—join thousands already making a difference.
             </p>
           </div>
           <div className="mt-6 flex gap-3 md:mt-0">
@@ -31,13 +31,13 @@ export function LandingPageCard7({ onSignupClick }: LandingPageCard7Props) {
               onClick={onSignupClick}
               className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-neutral-900 transition-all hover:bg-neutral-100"
             >
-              Start for free
+              Start for Free
             </button>
             <Link
               href="/rates/submit"
               className="rounded-full border border-white/60 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
-              Share my rate
+              Share my Rate
             </Link>
           </div>
         </div>
