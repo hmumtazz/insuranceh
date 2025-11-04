@@ -19,7 +19,6 @@ export function RateMapVideo({ prefersReducedMotion }: RateMapVideoProps) {
         className="grid items-start gap-8 md:grid-cols-2"
       >
         <div className="space-y-4">
-          <Pill className="bg-amber-100 text-amber-700">Interactive Map</Pill>
           <H2>See Insurance Rates Right Where You Live</H2>
         </div>
         <div className="space-y-3 md:pl-12">
@@ -33,27 +32,33 @@ export function RateMapVideo({ prefersReducedMotion }: RateMapVideoProps) {
       </motion.div>
 
       <Card className="mt-8 overflow-hidden p-0">
-        <div className="relative aspect-video w-full bg-neutral-900">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="h-full w-full object-cover"
-            aria-label="Rate map demonstration video showing interactive insurance rate comparisons"
-          >
-            <source src="/rate-map-demo.mp4" type="video/mp4" />
-            <source src="/rate-map-demo.webm" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
-          
-          {/* Optional: Overlay gradient for better text readability if needed */}
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/20 to-transparent pointer-events-none" />
-        </div>
+        <figure className="m-0">
+          <div className="relative aspect-video w-full bg-neutral-900">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="/rate-map-poster.png"
+              className="h-full w-full object-cover"
+              aria-label="Rate map demonstration video showing interactive insurance rate comparisons"
+            >
+              <source src="/rate-map-demo.mp4" type="video/mp4" />
+              <source src="/rate-map-demo.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+            
+            {/* Optional: Overlay gradient for better text readability if needed */}
+            <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/20 to-transparent pointer-events-none" />
+          </div>
+          <figcaption className="sr-only">
+            Interactive demonstration of RateNextDoor's rate map feature, showing how users can explore and compare home insurance rates from neighbors.
+          </figcaption>
+        </figure>
 
         <div className="p-6">
           <div className="flex flex-col gap-4 text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between">
-            <p>&ldquo;Watch how easy it is to compare insurance rates in your neighborhood.&rdquo;</p>
+            <p>&ldquo;Watch how Easy it is to Compare Insurance Rates in your Neighborhood.&rdquo;</p>
             <Link
               href="/rates/map"
               className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-900 transition-colors hover:text-neutral-700"
