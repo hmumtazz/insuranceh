@@ -55,12 +55,12 @@ export function Hero({ prefersReducedMotion, onSignupClick }: HeroProps) {
         }}
       />
 
-      <div className="mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-4 pt-24 text-center sm:px-6 sm:pt-28 md:pt-32 lg:px-8 lg:pt-36">
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-serif text-5xl tracking-tight text-neutral-900 sm:text-6xl md:text-7xl lg:text-8xl"
+          className="font-serif text-4xl tracking-tight text-neutral-900 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl"
           style={{ textShadow: '0 2px 8px rgba(0,0,0,0.15)' }}
         >
           See what your Neighbors Pay for Home Insurance,<br />
@@ -80,7 +80,7 @@ export function Hero({ prefersReducedMotion, onSignupClick }: HeroProps) {
             onClick={onSignupClick}
             className="rounded-full bg-neutral-900 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-neutral-900/20 transition-colors hover:bg-black"
           >
-            Create a free account
+            Create a Free Account
           </motion.button>
           <motion.div
             whileHover={prefersReducedMotion ? undefined : { scale: 1.04, y: -2 }}
@@ -90,7 +90,7 @@ export function Hero({ prefersReducedMotion, onSignupClick }: HeroProps) {
               href="/rates/map"
               className="rounded-full bg-neutral-900 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-neutral-900/20 transition-colors hover:bg-black"
             >
-              Explore the rate map
+              Explore the Rate Map
             </Link>
           </motion.div>
         </motion.div>
