@@ -108,18 +108,16 @@ export function MissionStatement({ prefersReducedMotion }: MissionStatementProps
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="space-y-10"
           >
-            <div className="inline-flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
-              <span className="h-px w-10 bg-sky-500/60" />
+           <div className="inline-flex w-full max-w-[90vw] sm:max-w-none flex-wrap items-center gap-2 text-[0.7rem] sm:text-xs font-semibold uppercase tracking-[0.1em] sm:tracking-[0.3em] text-sky-700 break-words">              <span className="h-px w-10 bg-sky-500/60" />
               Designed for homeowners who negotiate
             </div>
 
-            <div className="space-y-6">
-              <h2 className="font-serif text-4xl leading-tight text-neutral-900 sm:text-5xl">
+            <div className="space-y-6 w-full max-w-[90vw] sm:max-w-2xl lg:max-w-3xl">
+              <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl leading-snug sm:leading-tight text-neutral-900 w-full break-words">
                 Privacy-first. Always community-driven. Helping homeowners take control of their insurance costs with confidence.
               </h2>
 
-              <p className="max-w-2xl text-lg leading-relaxed text-neutral-700 sm:text-xl">
-                Compare real insurance premiums from homeowners in your neighborhood. Find better rates, connect with local brokers, and negotiate with confidence.
+              <p className="w-full text-base sm:text-lg leading-relaxed text-neutral-700 break-words">                Compare real insurance premiums from homeowners in your neighborhood. Find better rates, connect with local brokers, and negotiate with confidence.
               </p>
             </div>
 
@@ -219,7 +217,7 @@ export function MissionStatement({ prefersReducedMotion }: MissionStatementProps
             <div className="relative space-y-10">
               <div className="space-y-4">
                 <span className="inline-flex items-center rounded-full bg-neutral-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white">
-                  Live benchmarks
+                  Savings Without the Spam
                 </span>
                 <h3 className="font-serif text-3xl leading-snug text-neutral-900">
                   Insurance data, finally on your side.
