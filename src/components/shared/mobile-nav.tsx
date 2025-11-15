@@ -28,37 +28,63 @@ export function MobileNav({ user, isAdmin }: MobileNavProps) {
      </button>
 
       {open && (
-        <div className="absolute inset-x-4 top-20 z-50 rounded-2xl border border-white/60 bg-white/95 p-4 shadow-lg backdrop-blur">
-          <nav className="flex flex-col gap-3 text-sm font-medium text-neutral-800">
+        <div className="absolute inset-x-4 top-20 z-50 rounded-3xl border border-white/70 bg-white/95 px-5 py-4 shadow-xl shadow-black/10 backdrop-blur-xl">
+          <nav className="flex flex-col gap-2 text-base font-medium text-neutral-900 text-center">
             {user && (
-              <Link href="/dashboard" onClick={() => setOpen(false)}>
+              <Link
+                href="/dashboard"
+                onClick={() => setOpen(false)}
+                className="rounded-full px-4 py-2 transition hover:bg-neutral-900/5"
+              >
                 Dashboard
               </Link>
             )}
-            <Link href="/rates/map" onClick={() => setOpen(false)}>
+            <Link
+              href="/rates/map"
+              onClick={() => setOpen(false)}
+              className="rounded-full px-4 py-2 transition hover:bg-neutral-900/5"
+            >
               Rate Map
             </Link>
-            <Link href="/forum" onClick={() => setOpen(false)}>
+            <Link
+              href="/forum"
+              onClick={() => setOpen(false)}
+              className="rounded-full px-4 py-2 transition hover:bg-neutral-900/5"
+            >
               Forum
             </Link>
-            <Link href="/brokers" onClick={() => setOpen(false)}>
+            <Link
+              href="/brokers"
+              onClick={() => setOpen(false)}
+              className="rounded-full px-4 py-2 transition hover:bg-neutral-900/5"
+            >
               Brokers
             </Link>
             {isAdmin && (
-              <Link href="/admin/verifications" onClick={() => setOpen(false)}>
+              <Link
+                href="/admin/verifications"
+                onClick={() => setOpen(false)}
+                className="rounded-full px-4 py-2 transition hover:bg-neutral-900/5"
+              >
                 Admin
               </Link>
             )}
-            <a href="#resources" onClick={() => setOpen(false)}>
+            <a
+              href="#resources"
+              onClick={() => setOpen(false)}
+              className="rounded-full px-4 py-2 transition hover:bg-neutral-900/5"
+            >
               Resources
             </a>
           </nav>
 
-          <div className="mt-4 border-t border-neutral-200 pt-4">
+          <div className="mt-4 rounded-2xl bg-neutral-900/3 px-3 py-3">
             {user ? (
               <UserMenu displayName={user.email ?? 'User'} username={undefined} />
             ) : (
-              <AuthButtons />
+              <div className="flex justify-center">
+                <AuthButtons />
+              </div>
             )}
           </div>
         </div>
