@@ -127,7 +127,7 @@ export function MissionStatement({ prefersReducedMotion }: MissionStatementProps
               whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
-              className="relative"
+              className="relative hidden lg:block"
             >
               <div className="text-center mb-6">
                 <p className="text-sm font-medium text-neutral-600">Compare Quotes from Leading Carriers</p>
