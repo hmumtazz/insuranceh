@@ -78,7 +78,7 @@ export function Hero({ prefersReducedMotion, onSignupClick }: HeroProps) {
             whileHover={prefersReducedMotion ? undefined : { scale: 1.04 }}
             whileTap={prefersReducedMotion ? undefined : { scale: 0.96 }}
             onClick={onSignupClick}
-            className="inline-flex min-w-[240px] items-center justify-center rounded-full bg-neutral-900 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-neutral-900/20 transition-colors hover:bg-black"
+            className="inline-flex min-w-[240px] items-center justify-center rounded-full bg-neutral-900 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-neutral-900/20 transition-colors hover:bg-black cursor-pointer"
           >
             Create a Free Account
           </motion.button>

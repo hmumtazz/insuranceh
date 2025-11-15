@@ -9,13 +9,14 @@ export default function AuthButtons() {
     <div className="flex items-center gap-3">
       <button
         onClick={() => openAuthModal('signin')}
-        className="rounded-full md:rounded-2xl border border-white/40 bg-white/30 px-4 md:px-5 py-1.5 text-xs md:text-sm font-medium text-neutral-700 backdrop-blur-xl transition hover:bg-white/40 hover:text-neutral-900"
+        className="cursor-pointer rounded-full border border-white/40 bg-white/30 px-4 py-2 text-sm font-medium text-neutral-700 backdrop-blur-xl transition hover:bg-white/40 hover:text-neutral-900 transform transition-transform hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-md hover:shadow-black/10"
       >
         Log In
       </button>
+
       <button
         onClick={() => openAuthModal('signup')}
-        className="rounded-full md:rounded-2xl bg-neutral-900 px-4 md:px-5 py-1.5 text-xs md:text-sm font-semibold text-white transition hover:bg-black"
+        className="cursor-pointer rounded-full bg-neutral-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-black transform transition-transform hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-md hover:shadow-black/20"
       >
         Sign Up
       </button>
