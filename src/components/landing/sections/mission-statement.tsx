@@ -208,7 +208,7 @@ export function MissionStatement({ prefersReducedMotion }: MissionStatementProps
             whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
-            className="relative w-[200%] overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-12 shadow-2xl shadow-sky-200/40 backdrop-blur"
+            className="relative hidden lg:block w-[200%] overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-12 shadow-2xl shadow-sky-200/40 backdrop-blur"
           >
             <div className="absolute -top-20 right-16 h-64 w-64 rounded-full bg-sky-200/35 blur-3xl" />
             <div className="absolute top-24 right-[-3rem] h-80 w-80 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(255,138,76,0.45),_transparent_70%)] blur-3xl" />
