@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "RateNextDoor",
   description: "See what your Neighbors Pay for Home Insurance, then Pay Less",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -17,6 +20,11 @@ export default function RootLayout({
         <link 
           href="https://api.fontshare.com/v2/css?f[]=glacial-indifference@400,700&display=swap" 
           rel="stylesheet" 
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon.png"
         />
       </head>
       <body className="antialiased" style={{ backgroundColor: '#e9e9e9' }}>

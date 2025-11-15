@@ -14,6 +14,8 @@ import { LandingPageCard5 } from './sections/landing-page-card-5';
 import { LandingPageCard6 } from './sections/landing-page-card-6';
 import { LandingPageCard7 } from './sections/landing-page-card-7';
 import { Testimonials } from './sections/testimonials';
+import { ForumPromotion } from './sections/forum-promotion';
+import { FAQ } from './sections/faq';
 
 import { Footer } from './sections/footer';
 
@@ -53,15 +55,17 @@ export default function LandingContent() {
           onSignupClick={() => setAuthModal('signup')}
         />
         <MissionStatement prefersReducedMotion={prefersReducedMotion} />
-        <LandingPageCard2 prefersReducedMotion={prefersReducedMotion} />
+        {/* <LandingPageCard2 prefersReducedMotion={prefersReducedMotion} /> */}
         <HowItWorks prefersReducedMotion={prefersReducedMotion} />
         <RateMapVideo prefersReducedMotion={prefersReducedMotion} />
-        <LandingPageCard1 prefersReducedMotion={prefersReducedMotion} />
-        <LandingPageCard5 prefersReducedMotion={prefersReducedMotion} />
-        <LandingPageCard4 prefersReducedMotion={prefersReducedMotion} />
+        <ForumPromotion prefersReducedMotion={prefersReducedMotion} />
+        {/* <LandingPageCard1 prefersReducedMotion={prefersReducedMotion} /> */}
+        {/* <LandingPageCard5 prefersReducedMotion={prefersReducedMotion} /> */}
+        {/* <LandingPageCard4 prefersReducedMotion={prefersReducedMotion} /> */}
         <Testimonials prefersReducedMotion={prefersReducedMotion} />
-        <LandingPageCard6 prefersReducedMotion={prefersReducedMotion} />
-        <LandingPageCard7 onSignupClick={() => setAuthModal('signup')} />
+        <FAQ prefersReducedMotion={prefersReducedMotion} />
+        {/* <LandingPageCard6 prefersReducedMotion={prefersReducedMotion} /> */}
+        {/* <LandingPageCard7 onSignupClick={() => setAuthModal('signup')} /> */}
         <Footer />
       </main>
 

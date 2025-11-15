@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 import UserMenu from '@/components/landing/user-menu';
 import AuthButtons from '@/components/landing/auth-buttons';
+import { MobileNav } from '@/components/shared/mobile-nav';
 
 export default async function AppHeader() {
   const supabase = await createClient();
@@ -28,8 +29,8 @@ export default async function AppHeader() {
     'User';
 
   return (
-    <nav className="fixed top-6 left-0 right-0 z-50 px-20">
-    <div className="mx-auto flex w-full items-center justify-between gap-8 rounded-full border border-white/40 bg-white/30 px-6 py-3 shadow-lg shadow-black/5 backdrop-blur-xl h-16">
+    <nav className="fixed top-6 left-0 right-0 z-50 px-4 sm:px-6 lg:px-20">
+    <div className="mx-auto flex w-full items-center justify-between gap-4 sm:gap-8 rounded-full border border-white/40 bg-white/30 px-4 sm:px-6 py-3 shadow-lg shadow-black/5 backdrop-blur-xl h-16">
       
       {/* Left section (Logo, non-stretched) */}
       <div className="flex flex-1 items-center justify-start">
@@ -37,7 +38,7 @@ export default async function AppHeader() {
           <img 
             src="/logo.png" 
             alt="RateNextDoor Logo" 
-            className="h-8 w-50 md:h-9 lg:h-10 object-contain"
+            className="h-7 w-auto md:h-8 lg:h-9 object-contain"
           />
         </Link>
       </div>
@@ -68,13 +69,24 @@ export default async function AppHeader() {
         </a>
       </div>
 
-      {/* Right section (Auth controls) */}
+      {/* Right section (Auth + Mobile menu trigger) */}
       <div className="flex flex-1 items-center justify-end gap-3">
-        {user ? (
-          <UserMenu displayName={displayName} username={profile?.username} />
-        ) : (
-          <AuthButtons />
-        )}
+        {/* Desktop auth controls */}
+        <div className="hidden md:flex">
+          {user ? (
+            <UserMenu displayName={displayName} username={profile?.username} />
+          ) : (
+            <AuthButtons />
+          )}
+        </div>
+
+        {/* Mobile hamburger */}
+        <div className="md:hidden">
+          <MobileNav
+            user={user}
+            isAdmin={profile?.role === 'admin'}
+          />
+        </div>
       </div>
     </div>
     </nav>

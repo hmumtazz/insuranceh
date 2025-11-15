@@ -43,7 +43,7 @@ export function HowItWorks({ prefersReducedMotion }: HowItWorksProps) {
         </p>
       </motion.div>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:max-w-4xl lg:mx-auto">
         {steps.map((step, index) => (
           <motion.div
             key={step.number}
@@ -51,6 +51,7 @@ export function HowItWorks({ prefersReducedMotion }: HowItWorksProps) {
             whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, delay: prefersReducedMotion ? 0 : index * 0.1, ease: 'easeOut' }}
+            className={index === 2 ? 'sm:col-span-2 sm:mx-auto sm:max-w-md lg:max-w-lg' : ''}
           >
             <Card className="h-full p-8 text-center transition-all hover:shadow-lg">
               <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-neutral-900 text-2xl font-bold text-white">
