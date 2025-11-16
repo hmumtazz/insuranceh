@@ -67,6 +67,13 @@ export default function RateMap({ initialRates }: RateMapProps) {
     bathrooms: null as number | null,
   });
 
+  // US boundaries to restrict map view
+  // West: -125°, East: -66°, North: 49°, South: 24°
+  const usBounds: [[number, number], [number, number]] = [
+    [-125, 24], // Southwest corner (lng, lat)
+    [-66, 49],  // Northeast corner (lng, lat)
+  ];
+
   // Filter rates based on current filters
   const filteredRates = useMemo(() => {
     return initialRates.filter((rate) => {
@@ -83,9 +90,13 @@ export default function RateMap({ initialRates }: RateMapProps) {
   }, []);
 
   const handleLocationSelect = useCallback((lat: number, lng: number) => {
+    // Ensure the selected location is within US bounds
+    const clampedLng = Math.max(-125, Math.min(-66, lng));
+    const clampedLat = Math.max(24, Math.min(49, lat));
+    
     setViewport({
-      latitude: lat,
-      longitude: lng,
+      latitude: clampedLat,
+      longitude: clampedLng,
       zoom: 13,
     });
   }, []);
@@ -99,6 +110,9 @@ export default function RateMap({ initialRates }: RateMapProps) {
         mapStyle="mapbox://styles/mapbox/streets-v12"
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
         style={{ width: '100%', height: '100%' }}
+        maxBounds={usBounds}
+        minZoom={3}
+        maxZoom={18}
       >
         {/* Navigation Controls */}
         <NavigationControl position="top-right" />
@@ -151,18 +165,18 @@ export default function RateMap({ initialRates }: RateMapProps) {
         )}
       </Map>
 
-      {/* Search Bar */}
-      <div className="absolute left-1/2 top-4 z-10 w-full max-w-md -translate-x-1/2 px-4">
-        <MapSearchBar onLocationSelect={handleLocationSelect} />
-      </div>
-
-      {/* Filter Panel */}
-      <div className="absolute left-4 top-20 z-10">
-        <MapFilters
-          filters={filters}
-          onFiltersChange={setFilters}
-          rateCount={filteredRates.length}
-        />
+      {/* Map Controls: Search + Filters */}
+      <div className="pointer-events-none absolute inset-x-0 top-4 z-10 flex flex-col items-center gap-3 px-4 sm:top-6 sm:flex-row sm:items-start sm:justify-center sm:gap-4">
+        <div className="pointer-events-auto w-full max-w-md">
+          <MapSearchBar onLocationSelect={handleLocationSelect} />
+        </div>
+        <div className="pointer-events-auto w-full max-w-md sm:w-auto">
+          <MapFilters
+            filters={filters}
+            onFiltersChange={setFilters}
+            rateCount={filteredRates.length}
+          />
+        </div>
       </div>
 
       {/* Info Panel */}

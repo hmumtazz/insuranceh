@@ -81,7 +81,7 @@ export default function MapSearchBar({ onLocationSelect }: MapSearchBarProps) {
           onChange={handleInputChange}
           onFocus={() => suggestions.length > 0 && setShowSuggestions(true)}
           placeholder="Search for a location..."
-          className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 pr-10 shadow-lg focus:border-neutral-900 focus:outline-none"
+          className="w-full rounded-lg border border-neutral-300 bg-white/95 px-4 py-3 pr-10 text-sm text-neutral-900 placeholder:text-neutral-500 shadow-lg focus:border-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900/10"
         />
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
           {loading ? (

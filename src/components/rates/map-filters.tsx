@@ -21,7 +21,7 @@ export default function MapFilters({
   onFiltersChange,
   rateCount,
 }: MapFiltersProps) {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className="w-80 overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-lg">
