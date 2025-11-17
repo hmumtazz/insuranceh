@@ -24,7 +24,7 @@ export default function MapFilters({
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="w-80 overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-lg">
+    <div className="w-full overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-lg">
       {/* Header */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}

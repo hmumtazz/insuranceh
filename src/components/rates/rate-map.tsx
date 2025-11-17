@@ -115,9 +115,8 @@ export default function RateMap({ initialRates }: RateMapProps) {
         maxZoom={18}
       >
         {/* Navigation Controls */}
-        <NavigationControl position="top-right" />
+        <NavigationControl position="bottom-right" />
 
-        {/* Rate Markers */}
         {filteredRates.map((rate) => {
           if (!rate.anonymized_location?.coordinates) return null;
 
@@ -179,8 +178,8 @@ export default function RateMap({ initialRates }: RateMapProps) {
         </div>
       </div>
 
-      {/* Info Panel */}
-      <div className="absolute bottom-4 left-4 z-10 rounded-lg border border-neutral-200 bg-white/90 p-4 shadow-lg backdrop-blur-sm">
+      {/* Info Panel (hidden on small screens) */}
+      <div className="absolute bottom-4 left-4 z-10 hidden rounded-lg border border-neutral-200 bg-white/90 p-4 shadow-lg backdrop-blur-sm sm:block">
         <div className="flex items-center gap-4 text-sm">
           <div className="text-neutral-600">
             Showing {filteredRates.length} rate

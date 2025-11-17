@@ -26,7 +26,7 @@ export default async function RatesMapPage() {
   return (
     <div className="flex h-screen flex-col">
       {/* Header */}
-      <nav className="border-b border-white/40 bg-white/80 shadow-sm backdrop-blur-md">
+      <nav className="relative z-50 border-b border-white/40 bg-white/80 shadow-sm backdrop-blur-md">
         <div className="flex h-16 w-full items-center px-4 sm:px-6 lg:px-8">
           {/* Left: Logo */}
           <div className="flex flex-1 items-center justify-start">
@@ -63,7 +63,7 @@ export default async function RatesMapPage() {
               </Link>
             </div>
             <div className="md:hidden">
-              <MobileNav user={user} isAdmin={profile?.role === 'admin'} />
+              <MobileNav user={user} isAdmin={profile?.role === 'admin'} showAuth={false} />
             </div>
           </div>
         </div>

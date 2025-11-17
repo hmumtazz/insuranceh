@@ -8,9 +8,10 @@ import UserMenu from '@/components/landing/user-menu';
 interface MobileNavProps {
   user: any;
   isAdmin: boolean;
+  showAuth?: boolean;
 }
 
-export function MobileNav({ user, isAdmin }: MobileNavProps) {
+export function MobileNav({ user, isAdmin, showAuth = true }: MobileNavProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -76,17 +77,31 @@ export function MobileNav({ user, isAdmin }: MobileNavProps) {
             >
               Resources
             </a>
+
+            {/* Submit Rate only on Rate Map page */}
+            {!showAuth && (
+              <Link
+                href="/rates/submit"
+                onClick={() => setOpen(false)}
+                className="rounded-full bg-neutral-900 px-4 py-2 font-semibold text-white shadow-sm shadow-neutral-900/20 transition hover:bg-black"
+              >
+                Submit Your Rate
+              </Link>
+            )}
+
           </nav>
 
-          <div className="mt-4 rounded-2xl bg-neutral-900/3 px-3 py-3">
-            {user ? (
-              <UserMenu displayName={user.email ?? 'User'} username={undefined} />
-            ) : (
-              <div className="flex justify-center">
-                <AuthButtons />
-              </div>
-            )}
-          </div>
+          {showAuth && (
+            <div className="mt-4 rounded-2xl bg-neutral-900/3 px-3 py-3">
+              {user ? (
+                <UserMenu displayName={user.email ?? 'User'} username={undefined} />
+              ) : (
+                <div className="flex justify-center">
+                  <AuthButtons />
+                </div>
+              )}
+            </div>
+          )}
         </div>
       )}
     </>
