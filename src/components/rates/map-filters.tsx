@@ -102,7 +102,7 @@ export default function MapFilters({
             <label className="mb-2 block text-sm font-medium text-neutral-700">
               Bedrooms
             </label>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               {[null, 1, 2, 3, 4, 5].map((num) => (
                 <button
                   key={num === null ? 'any' : num}
@@ -126,7 +126,7 @@ export default function MapFilters({
             <label className="mb-2 block text-sm font-medium text-neutral-700">
               Bathrooms
             </label>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               {[null, 1, 1.5, 2, 2.5, 3].map((num) => (
                 <button
                   key={num === null ? 'any' : num}
