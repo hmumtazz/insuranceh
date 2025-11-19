@@ -58,12 +58,12 @@ export function RateMapVideo({ prefersReducedMotion }: RateMapVideoProps) {
 
         <div className="p-6">
           <div className="flex flex-col gap-4 text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between">
-            <p>&ldquo;Watch how Easy it is to Compare Insurance Rates in your Neighborhood.&rdquo;</p>
+            <p>Watch how Easy it is to Compare Insurance Rates in your Neighborhood.</p>
             <Link
               href="/rates/map"
               className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-900 transition-colors hover:text-neutral-700"
             >
-              Try it yourself
+              Try it Yourself
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

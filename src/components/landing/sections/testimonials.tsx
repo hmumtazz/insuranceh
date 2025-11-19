@@ -15,7 +15,7 @@ export function Testimonials({ prefersReducedMotion }: { prefersReducedMotion: b
             transition={{ duration: 0.5 }}
             className="font-serif text-3xl text-neutral-900 sm:text-4xl"
           >
-            Homeowners who already used the map.
+            Homeowners who Already Used the Map.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
