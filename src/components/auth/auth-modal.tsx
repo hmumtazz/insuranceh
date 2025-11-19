@@ -95,7 +95,7 @@ export default function AuthModal({ mode, onClose }: AuthModalProps) {
 
       {/* Modal */}
       <div className="relative m-auto w-full max-w-6xl px-4 py-8" style={{ zIndex: 9999 }}>
-        <div className="flex max-h-[85vh] overflow-hidden rounded-2xl bg-white shadow-2xl">
+        <div className="relative flex max-h-[85vh] overflow-hidden rounded-2xl bg-white shadow-2xl">
           {/* Left Side - Welcome */}
           <div className="hidden w-2/5 flex-col items-center justify-center bg-neutral-50 p-12 lg:flex">
             <div className="text-center">
